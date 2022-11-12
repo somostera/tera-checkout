@@ -1,0 +1,1 @@
+export const GOOGLE_BUCKET_URL = 'https://storage.googleapis.com/tera-checkout'

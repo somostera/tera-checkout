@@ -1,0 +1,4 @@
+dispatch:
+  # Payments em next
+  - url: "pay.somostera.com/*"
+    service: next-production

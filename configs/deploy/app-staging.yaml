@@ -1,0 +1,12 @@
+env: standard
+runtime: nodejs14
+service: next-staging
+handlers:
+  - url: /.*
+    secure: always
+    script: auto
+  - url: /(.*\.(gif|png|jpg|webp|ico|txt))$
+    static_files: static/\1
+    upload: static/.*\.(gif|png|jpg|webp|ico|txt)$
+    secure: always
+    expiration: 366d

@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "baseUrl": "./src"
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/core/components/inputs/EmailInput/index.tss", "src/core/components/inputs/EmailInput/index.tss", "cypress/integration/checkin.spec.js", "cypress/integration/checkin.spec.js", "__tests__/core/components/inputs/TextInput.spec.ts", "__tests__/core/components/inputs/TextInput.spec.ts"],
+  "exclude": ["node_modules"]
+}
