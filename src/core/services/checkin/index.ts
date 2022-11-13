@@ -10,8 +10,7 @@ export async function getStudentDealsAndPublicJourneys(
   input: GetStudentDealsAndPublicJourneys
 ): Promise<GetStudentDealsAndPublicJourneysResponse> {
   const data = jwt.encode(input)
-  return await request.post({
-    path: '/checkin',
-    body: { data },
-  })
+  const path = '/checkin/profile'
+  const body = { data }
+  return await request.post({ path, body })
 }
