@@ -1,6 +1,6 @@
 import type { AppProps } from 'next/app'
 import { ChakraProvider } from '@chakra-ui/react'
-import DefaultLayout from 'layouts/DefaultLayout'
+import DefaultLayout from 'core/layouts/DefaultLayout'
 import { TeraDesignSystem } from 'core/themes/chakra'
 
 
