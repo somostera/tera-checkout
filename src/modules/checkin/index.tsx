@@ -1,4 +1,4 @@
-import { CheckinService } from "core/services/checkin";
+import { CheckinService } from "./services";
 import { EmailInput, TextInput, CheckboxInput } from "core/components/inputs";
 import { ROUTES } from "core/utils/constants/routes";
 import { GOOGLE_BUCKET_URL } from "core/utils/constants/urls";
@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { FormControl, Button, Box, Text } from "@chakra-ui/react";
-import { CheckinFormValidator } from "core/services/checkin/validators/CheckinFormValidator";
+import { CheckinFormValidator } from "./validators/CheckinFormValidator";
 import { CheckinModuleParams } from "./types/CheckinModuleParams";
 
 export default function CheckinModule({ query }: CheckinModuleParams) {
