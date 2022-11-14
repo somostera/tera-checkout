@@ -1,15 +1,15 @@
 import type { AppProps } from 'next/app'
 import { ChakraProvider } from '@chakra-ui/react'
-import DefaultLayout from 'core/layouts/DefaultLayout'
+import MainLayout from 'core/layouts/Main'
 import { TeraDesignSystem } from 'core/themes/chakra'
 
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider theme={TeraDesignSystem}>
-      <DefaultLayout>
+      <MainLayout>
         <Component {...pageProps} />
-      </DefaultLayout>
+      </MainLayout>
     </ChakraProvider>
   )
 }

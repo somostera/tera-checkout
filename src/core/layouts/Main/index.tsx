@@ -1,7 +1,7 @@
 import { Box } from "@chakra-ui/react";
 import NavBar from "./components/NavBar";
 
-export default function DefaultLayout({ children }: any) {
+export default function MainLayout({ children }: any) {
   return (
     <Box backgroundColor='#F7F7F7' h="100vh">
       <NavBar />
