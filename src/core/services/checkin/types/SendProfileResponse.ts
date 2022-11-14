@@ -1,4 +1,4 @@
-export type GetStudentDealsAndPublicJourneysResponse = {
+export type SendProfileResponse = {
   studentDeals: StudentDeal[];
   publicJourneys: PublicJourney[];
 }

@@ -1,16 +1,18 @@
-import { jwt } from "core/adapters/jwt"
-import { Requests } from "core/adapters/requests"
-import { ENVIRONMENT } from "core/utils/environment"
-import { GetStudentDealsAndPublicJourneys } from "./types/GetStudentDealsAndPublicJourneys"
-import { GetStudentDealsAndPublicJourneysResponse } from "./types/GetStudentDealsAndPublicJourneysResponse"
+import { jwt } from "core/adapters/jwt";
+import { Requests } from "core/adapters/requests";
+import { ENVIRONMENT } from "core/utils/environment";
+import { SendProfileInput } from "./types/SendProfileInput";
+import { SendProfileResponse } from "./types/SendProfileResponse";
 
-const request = new Requests(ENVIRONMENT.CHECKOUT_API_URL)
+export class CheckinService {
+  constructor(
+    private readonly checkoutApi = new Requests(ENVIRONMENT.CHECKOUT_API_URL)
+  ) {}
 
-export async function getStudentDealsAndPublicJourneys(
-  input: GetStudentDealsAndPublicJourneys
-): Promise<GetStudentDealsAndPublicJourneysResponse> {
-  const data = jwt.encode(input)
-  const path = '/checkin/profile'
-  const body = { data }
-  return await request.post({ path, body })
+  async sendProfile(input: SendProfileInput): Promise<SendProfileResponse> {
+    const data = jwt.encode(input);
+    const path = "/checkin/profile";
+    const body = { data };
+    return await this.checkoutApi.post({ path, body });
+  }
 }

@@ -1,4 +1,4 @@
-export type GetStudentDealsAndPublicJourneys = {
+export type SendProfileInput = {
   acronym: string
   email: string
   first_name: string

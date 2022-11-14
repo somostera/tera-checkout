@@ -1,9 +1,13 @@
 import CheckinModule from "modules/checkin"
-import { CheckinOptions } from "modules/checkin/types/CheckinOptions"
-import { CheckinParams } from "modules/checkin/types/CheckinParams"
 import { GetServerSidePropsOptions } from "core/utils/types/GetServerSidePropsOptions"
 
-export default function Checkin ({ query }: CheckinOptions<CheckinParams>) {
+type CheckinProps = {
+  query: {
+    acronym: string
+  }
+}
+
+export default function Checkin({ query }: CheckinProps) {
   return <CheckinModule query={query} />
 }
 
