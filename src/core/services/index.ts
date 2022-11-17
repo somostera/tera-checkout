@@ -15,4 +15,9 @@ export class CheckinService {
     const body = { data };
     return await this.checkoutApi.post({ path, body });
   }
+
+  async getStudentDealsWithPublicJourneys(email: string) {
+    const path = `/checkin/contact/${email}/deals`;
+    return await this.checkoutApi.get({ path });
+  }
 }

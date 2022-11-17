@@ -1,5 +1,5 @@
 import { validateEmail } from "core/utils/validators/email";
-import { SendProfileInput } from "../services/types/SendProfileInput";
+import { SendProfileInput } from "../../../core/services/types/SendProfileInput";
 
 export class CheckinFormValidator {
   static validate(input: SendProfileInput) {

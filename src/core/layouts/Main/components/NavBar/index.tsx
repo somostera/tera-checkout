@@ -1,12 +1,10 @@
 import { Box, Text } from "@chakra-ui/react";
-import { useRouter } from "next/router";
 import Image from 'next/image'
 import { GOOGLE_BUCKET_URL } from "core/utils/constants/urls";
+import { NavBarProps } from "./types/NavBarProps";
 
-export default function NavBar() {
-  const router = useRouter()
-  const course = router.query?.acronym
-  const message = course ? 'Digital Product Leadership' : 'Bem vindi a Tera!'
+export default function NavBar(props: NavBarProps) {
+  const { text } = props
   const securityImg = `${GOOGLE_BUCKET_URL}/icons/padlock.svg`
   const logoImg = `${GOOGLE_BUCKET_URL}/header/logo.webp`
 
@@ -21,7 +19,7 @@ export default function NavBar() {
           lineHeight="5"
           textTransform="uppercase"
         >
-          {message}
+          {text}
         </Text>
         <Box
           textTransform="uppercase"

@@ -1,6 +1,8 @@
 export type SendProfileResponse = {
-  studentDeals: StudentDeal[];
-  publicJourneys: PublicJourney[];
+  student: {
+    id: string
+    deals: StudentDeal[]
+  }
 }
 
 type StudentDeal = {

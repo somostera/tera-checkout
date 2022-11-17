@@ -1,4 +1,4 @@
-import { CheckinService } from "./services";
+import { CheckinService } from "../../core/services";
 import { EmailInput, TextInput, CheckboxInput } from "core/components/inputs";
 import { ROUTES } from "core/utils/constants/routes";
 import { GOOGLE_BUCKET_URL } from "core/utils/constants/urls";
@@ -15,7 +15,6 @@ export default function CheckinModule({ query }: CheckinModuleParams) {
   const router = useRouter();
   const checkinService = new CheckinService();
 
-  const { acronym } = query
   const [disableBtn, setDisableBtn] = useState(true);
   const [loadingBtn, setLoadingBtn] = useState(false);
   const [checkinForm, setCheckinForm] =
@@ -23,17 +22,16 @@ export default function CheckinModule({ query }: CheckinModuleParams) {
       email: "",
       first_name: "",
       last_name: "",
-      acronym: acronym,
       accepted_terms: false,
       accepted_receive_notifications: false,
     });
 
   const image = `${GOOGLE_BUCKET_URL}/checkin/mulher-rindo-com-notebook.webp`;
 
-  const navigate = () => {
+  const navigate = (email: string) => {
     router.push({
-      pathname: ROUTES.PERSONAL_INFORMATIONS,
-      query: { acronym }
+      pathname: ROUTES.STUDENT,
+      query: { email }
     });
   }
 
@@ -42,7 +40,7 @@ export default function CheckinModule({ query }: CheckinModuleParams) {
     actions.map((setter) => setter(true));
     try {
       await checkinService.sendProfile(checkinForm);
-      navigate()
+      navigate(checkinForm.email)
     } catch (error) {
       actions.map((setter) => setter(false));
     } finally {
